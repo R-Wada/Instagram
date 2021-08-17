@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '14.2'
+platform :ios, '14.5'
 
 target 'Instagram' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -13,4 +13,6 @@ target 'Instagram' do
   pod 'Firebase/Storage'
   pod 'FirebaseUI/Storage'
   pod 'SVProgressHUD','2.2.5'
+  pod 'CLImageEditor/AllTools','0.2.4'
+  pod 'FirebaseUI/Storage'
 end

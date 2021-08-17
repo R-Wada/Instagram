@@ -3,10 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30923F4C26CB7AA20025414A /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30923F4B26CB7AA20025414A /* Const.swift */; };
+		30923F4F26CB7E2B0025414A /* PostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30923F4E26CB7E2B0025414A /* PostData.swift */; };
+		30923F5326CB7F470025414A /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30923F5126CB7F470025414A /* PostTableViewCell.swift */; };
+		30923F5426CB7F470025414A /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30923F5226CB7F470025414A /* PostTableViewCell.xib */; };
 		309C0DA326CA2A50002D92CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309C0DA226CA2A50002D92CA /* AppDelegate.swift */; };
 		309C0DA526CA2A50002D92CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309C0DA426CA2A50002D92CA /* SceneDelegate.swift */; };
 		309C0DA726CA2A50002D92CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309C0DA626CA2A50002D92CA /* ViewController.swift */; };
@@ -24,6 +28,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		30923F4B26CB7AA20025414A /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		30923F4E26CB7E2B0025414A /* PostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostData.swift; sourceTree = "<group>"; };
+		30923F5126CB7F470025414A /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		30923F5226CB7F470025414A /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		309C0D9F26CA2A50002D92CA /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		309C0DA226CA2A50002D92CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		309C0DA426CA2A50002D92CA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +99,10 @@
 				309C0DC426CA2C2C002D92CA /* SettingViewController.swift */,
 				309C0DC726CA384C002D92CA /* TabBarController.swift */,
 				309C0DCA26CB198C002D92CA /* GoogleService-Info.plist */,
+				30923F4B26CB7AA20025414A /* Const.swift */,
+				30923F4E26CB7E2B0025414A /* PostData.swift */,
+				30923F5126CB7F470025414A /* PostTableViewCell.swift */,
+				30923F5226CB7F470025414A /* PostTableViewCell.xib */,
 			);
 			path = Instagram;
 			sourceTree = "<group>";
@@ -109,7 +121,6 @@
 				DA240C0A45711F27444917A9 /* Pods-Instagram.debug.xcconfig */,
 				F1C664AF2898AE543C308739 /* Pods-Instagram.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -173,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				309C0DAF26CA2A55002D92CA /* LaunchScreen.storyboard in Resources */,
+				30923F5426CB7F470025414A /* PostTableViewCell.xib in Resources */,
 				309C0DCB26CB198C002D92CA /* GoogleService-Info.plist in Resources */,
 				309C0DAC26CA2A55002D92CA /* Assets.xcassets in Resources */,
 				309C0DAA26CA2A50002D92CA /* Main.storyboard in Resources */,
@@ -237,6 +249,9 @@
 				309C0DA726CA2A50002D92CA /* ViewController.swift in Sources */,
 				309C0DA326CA2A50002D92CA /* AppDelegate.swift in Sources */,
 				309C0DA526CA2A50002D92CA /* SceneDelegate.swift in Sources */,
+				30923F4F26CB7E2B0025414A /* PostData.swift in Sources */,
+				30923F4C26CB7AA20025414A /* Const.swift in Sources */,
+				30923F5326CB7F470025414A /* PostTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
