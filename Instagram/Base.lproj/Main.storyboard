@@ -237,6 +237,62 @@
             </objects>
             <point key="canvasLocation" x="2406" y="95"/>
         </scene>
+        <!--Post Comment View Controller-->
+        <scene sceneID="l73-JR-Ui7">
+            <objects>
+                <viewController storyboardIdentifier="Comment" id="q2H-lh-JVL" customClass="PostCommentViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qd8-ug-RTP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="コメント" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vFA-mT-9an">
+                                <rect key="frame" x="57" y="124" width="300" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="zXV-6X-1xx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcJ-Jz-Tau">
+                                <rect key="frame" x="57" y="168" width="300" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="hnc-Mg-12Q"/>
+                                </constraints>
+                                <state key="normal" title="投稿" backgroundImage="btn"/>
+                                <connections>
+                                    <action selector="handlePostButton:" destination="q2H-lh-JVL" eventType="touchUpInside" id="2j1-GI-zDl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ima-Tu-jLi">
+                                <rect key="frame" x="57" y="218" width="300" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="Cgq-j6-yKw"/>
+                                </constraints>
+                                <state key="normal" title="キャンセル" backgroundImage="btn"/>
+                                <connections>
+                                    <action selector="handleCancelButton:" destination="q2H-lh-JVL" eventType="touchUpInside" id="9aK-sO-unM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qDP-SF-kuc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pcJ-Jz-Tau" firstAttribute="centerX" secondItem="qd8-ug-RTP" secondAttribute="centerX" id="Ypk-Uk-a0R"/>
+                            <constraint firstItem="vFA-mT-9an" firstAttribute="top" secondItem="qDP-SF-kuc" secondAttribute="top" constant="80" id="kKd-kB-7Cu"/>
+                            <constraint firstItem="Ima-Tu-jLi" firstAttribute="top" secondItem="pcJ-Jz-Tau" secondAttribute="bottom" constant="10" id="lRU-F8-7ZY"/>
+                            <constraint firstItem="pcJ-Jz-Tau" firstAttribute="top" secondItem="vFA-mT-9an" secondAttribute="bottom" constant="10" id="pdR-Ae-mbY"/>
+                            <constraint firstItem="vFA-mT-9an" firstAttribute="centerX" secondItem="qd8-ug-RTP" secondAttribute="centerX" id="rCP-R9-g9A"/>
+                            <constraint firstItem="Ima-Tu-jLi" firstAttribute="centerX" secondItem="qd8-ug-RTP" secondAttribute="centerX" id="xHY-JC-Ggd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textField" destination="vFA-mT-9an" id="y3r-wv-PGD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5jT-hT-Lip" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1906" y="798"/>
+        </scene>
         <!--設定-->
         <scene sceneID="Kn3-Dx-aWS">
             <objects>

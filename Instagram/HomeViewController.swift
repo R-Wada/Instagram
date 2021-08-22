@@ -22,8 +22,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
         tableView.delegate = self
         tableView.dataSource = self
-
-        // カスタムセルを登録する
+         // カスタムセルを登録する
         let nib = UINib(nibName: "PostTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "Cell")
     }
@@ -44,8 +43,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                  self.postArray = querySnapshot!.documents.map { document in
                      print("DEBUG_PRINT: document取得 \(document.documentID)")
                      let postData = PostData(document: document)
+                    
                      return postData
                  }
+
                  // TableViewの表示を更新する
                  self.tableView.reloadData()
              }
@@ -66,14 +67,33 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // セルを取得してデータを設定する
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! PostTableViewCell
+
         cell.setPostData(postArray[indexPath.row])
 
         // セル内のボタンのアクションをソースコードで設定する
          cell.likeButton.addTarget(self, action:#selector(handleButton(_:forEvent:)), for: .touchUpInside)
-
+        cell.cmtButton.addTarget(self, action:#selector(commentTap(_:forEvent:)), for: .touchUpInside)
+        
+ 
         return cell
     }
-    
+    @objc func commentTap(_ sender: UIButton, forEvent event: UIEvent){
+        // タップされたセルのインデックスを求める
+        let touch = event.allTouches?.first
+        let point = touch!.location(in: self.tableView)
+        let indexPath = tableView.indexPathForRow(at: point)
+
+        // 配列からタップされたインデックスのデータを取り出す
+        let postData = postArray[indexPath!.row]
+        
+        let postCommentViewController = self.storyboard?.instantiateViewController(withIdentifier: "Comment") as! PostCommentViewController
+        self.present(postCommentViewController, animated: true, completion: { postCommentViewController.SetPostData(postData)})
+        
+        //セルの選択を解除
+        tableView.deselectRow(at: indexPath!, animated: true)
+
+    }
+
     // セル内のボタンがタップされた時に呼ばれるメソッド
      @objc func handleButton(_ sender: UIButton, forEvent event: UIEvent) {
          print("DEBUG_PRINT: likeボタンがタップされました。")

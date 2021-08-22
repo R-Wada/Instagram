@@ -6,16 +6,21 @@
 //
 
 import UIKit
+import Firebase
 import FirebaseUI
 
-class PostTableViewCell: UITableViewCell {
+class PostTableViewCell: UITableViewCell, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var cmtLabel: UILabel!
     @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var likeLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var captionLabel: UILabel!
+    @IBOutlet weak var cmtButton: UIButton!
+
     
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -29,7 +34,8 @@ class PostTableViewCell: UITableViewCell {
     
     // PostDataの内容をセルに表示
      func setPostData(_ postData: PostData) {
-         // 画像の表示
+
+        // 画像の表示
          postImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
          let imageRef = Storage.storage().reference().child(Const.ImagePath).child(postData.id + ".jpg")
          postImageView.sd_setImage(with: imageRef)
@@ -45,7 +51,8 @@ class PostTableViewCell: UITableViewCell {
              let dateString = formatter.string(from: date)
              self.dateLabel.text = dateString
          }
-
+        
+        self.cmtLabel.text = postData.comments
          // いいね数の表示
          let likeNumber = postData.likes.count
          likeLabel.text = "\(likeNumber)"
@@ -58,5 +65,7 @@ class PostTableViewCell: UITableViewCell {
              let buttonImage = UIImage(named: "like_none")
              self.likeButton.setImage(buttonImage, for: .normal)
          }
+        
+
      }
 }
